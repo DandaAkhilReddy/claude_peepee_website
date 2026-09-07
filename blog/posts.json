@@ -4120,5 +4120,62 @@
     "url": "https://www.inc.com/joe-galvin/60-percent-of-small-businesses-close-within-6-months-of-being-hacked.html"
    }
   ]
+ },
+ {
+  "slug": "2026-09-07-microsoft-copilot-plugins-marketplace",
+  "date": "2026-09-07",
+  "category": "Microsoft",
+  "title": "Microsoft Copilot Plugins Marketplace Goes Live: A New Platform Moment",
+  "summary": "Microsoft finally launched a unified Copilot Plugins Marketplace for Windows and Office users. Here’s why this is a seismic platform shift for engineers.",
+  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop",
+  "body": "<p>It was only a matter of time: Microsoft just rolled out the Copilot Plugins Marketplace, a centralized app store for Copilot extensions across Windows, Office, and Edge. This isn’t just another marketplace—it's a new OS-level platform for AI-augmented workflows.</p><h2>Why It Matters</h2><p>Engineers now have a first-class way to distribute, monetize, and maintain AI-powered extensions that plug directly into Microsoft’s ecosystem. The Marketplace bridges Windows (desktop), Office (productivity cloud), Edge (browser), and even Teams, ensuring your plugin code reaches hundreds of millions of users with a single packaging and submission process.</p><p>Microsoft’s new plugin architecture exposes a standardized API layer for secure data access (using Graph), interop with Copilot’s semantic kernel, and low-level OS hooks. For the first time, you can build a plugin that reads a Word doc, summarizes it with your custom LLM chain, and triggers a Teams workflow—all from one codebase.</p><h2>What to Watch For</h2><p>This is going to be a battle for developer mindshare between Microsoft, Slack (with its app ecosystem), and Google Workspace AI add-ons. But Microsoft’s deep OS integration means engineers can build richer, more context-aware experiences—think auto-contextual Copilot popups, proactive alerts, and secure local file access (with user consent, of course).</p><p>The plugin review process focuses on responsible AI and privacy, which means extra hoops for engineering teams—but also a trust signal for users. Expect an explosion of Copilot tools in enterprise, and lots of opportunity for engineers to ship productivity-boosting plugins that would have been impossible just a year ago.</p><strong>Takeaway:</strong> If you’re not building for Copilot yet, now is the time. The gravity of Windows plus Office is too big to ignore, and the plugin platform finally gives engineers the APIs we’ve been demanding for years.</p>",
+  "sources": [
+   {
+    "title": "Microsoft launches unified Copilot Plugins Marketplace",
+    "url": "https://www.theverge.com/2026/09/05/microsoft-copilot-plugins-marketplace-launch"
+   },
+   {
+    "title": "Plugin architecture documentation for Microsoft Copilot",
+    "url": "https://learn.microsoft.com/en-us/copilot/plugins/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-07-semiconductors-intel-angstrom-era-servers",
+  "date": "2026-09-07",
+  "category": "Semiconductors",
+  "title": "Intel’s 14A Node Ships in Volume: Angstrom-Era Servers Land in the Real World",
+  "summary": "Intel’s 14A process (1.4nm) is officially in the wild, powering hyperscale servers. Here’s what engineers need to know about the Angstrom era’s practical debut.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>Intel’s 14A node—the first commercial angstrom-scale (1.4nm) process—just arrived in cloud datacenters. While TSMC and Samsung have been teasing angstrom-class tech, Intel is first to actually ship volume silicon, specifically for next-gen Xeon Ultra and Gaudi 4 AI accelerators.</p><h2>Why Engineers Should Care</h2><p>14A enables a legit 2x transistor density boost over 18A, with lower voltage swings, backside power delivery, and full-stack ribbon-FETs. That translates to real-world wins: up to 35% lower core power at the same frequency and nearly double the memory channel bandwidth (thanks to tighter I/O integration).</p><p>For AI training, the headline is more SRAM per die (beats HBM bottlenecks) and custom logic blocks for LLM inference primitives. Intel’s server chips are also the first to feature in-package photonics for rack-scale memory pools—an absolute game changer for distributed training and inference latency.</p><h2>The Engineering Impact</h2><p>First, this resets the power/performance baseline for anyone building AI or cloud-native services. Second, the new process lets you squeeze more accelerators in a rack, cut cooling costs, and rethink system partitioning. Finally: Intel’s open software stack means you can start hacking at this hardware with familiar XPU tools (oneAPI, PyTorch, ONNX).</p><strong>Bottom Line:</strong> Angstrom-scale silicon is no longer theoretical. If you’re developing for AI, cloud, or high-performance workloads, you need to understand what these ultra-dense, photonic-enabled processors unlock—and what new bottlenecks (like PCB signaling) they introduce.</p>",
+  "sources": [
+   {
+    "title": "Intel ships 14A Xeon Ultra for hyperscale",
+    "url": "https://www.anandtech.com/show/20865/intel-14a-servers-shipping"
+   },
+   {
+    "title": "Angstrom nodes: What engineers should know",
+    "url": "https://www.semianalysis.com/p/angstrom-era-intel-14a-tsmc"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-07-llm-research-meta-moe-mixup",
+  "date": "2026-09-07",
+  "category": "LLM Research",
+  "title": "Meta’s MoE-MixUp: Swapping Experts On the Fly for Smarter LLMs",
+  "summary": "Meta AI just released MoE-MixUp, a new way to combine mixture-of-experts with dynamic routing and context mixing. It’s a leap in LLM efficiency and reasoning.",
+  "image": "https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=1200&h=600&fit=crop",
+  "body": "<p>Mixture-of-Experts (MoE) models let LLMs scale by activating only relevant subnetworks (experts) for each input. But static routing and under-trained experts have plagued MoE deployment at scale. Meta’s new MoE-MixUp approach combines expert selection with learned dynamic mixing—think of it as both choosing and blending experts based on context, not just input tokens.</p><h2>The Technical Leap</h2><p>MoE-MixUp introduces two things: (1) a context-conditioned router that analyzes not just token-level input but the broader dialogue/instruction, and (2) a gated mixing mechanism that creates ‘virtual experts’ by interpolating between real ones. This solves the “dead expert” problem and lets the LLM use nuanced capabilities (e.g., math + code + reasoning) in a single pass.</p><p>Benchmarks show 18-30% lower FLOPs per output token at parity accuracy, and Meta’s evals on reasoning tasks (MATH, GSM8K, HumanEval) show strong boosts vs. static MoE models. Even more interesting: model size is now less bottlenecked by expert redundancy, so you can scale the number of experts and still train efficiently.</p><h2>Why It Matters for Engineers</h2><p>If you’re building or fine-tuning LLMs, MoE-MixUp means you can run larger, more capable models at lower cost and with more flexible reasoning. It paves the way for LLMs that can blend skills on the fly—think chatbots that fluidly switch between coding, summarizing, and logical reasoning, all without context windows blowing up.</p><strong>Hot Take:</strong> Expect every major lab to chase dynamic MoE in their next-gen architectures. For engineers, this means rethinking prompt design (since the model is now more context-reactive) and exploring how to target custom experts for domain-specific tasks.</p>",
+  "sources": [
+   {
+    "title": "Meta AI: MoE-MixUp Whitepaper",
+    "url": "https://ai.facebook.com/research/publications/moe-mixup-2026"
+   },
+   {
+    "title": "Mixture-of-Experts in LLMs: The New Scaling Frontier",
+    "url": "https://www.semisupervised.com/p/moe-mixup-meta-2026"
+   }
+  ]
  }
 ]
