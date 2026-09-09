@@ -4280,5 +4280,74 @@
     "url": "https://www.napt.org/files/2023%20NAPT%20Operations%20Survey.pdf"
    }
   ]
+ },
+ {
+  "slug": "2026-09-09-microsoft-cosmos-db-ai-indexes",
+  "date": "2026-09-09",
+  "category": "Microsoft",
+  "title": "Cosmos DB AI Indexes: Vector Search Goes Native in Azure",
+  "summary": "Microsoft just launched native AI-powered indexes in Azure Cosmos DB, making hybrid search and retrieval-augmented generation (RAG) far simpler for engineers building global-scale apps.",
+  "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+  "body": "<p>Microsoft is pushing the envelope on data infrastructure again. This week, Cosmos DB rolled out native AI indexes: you can now store, search, and retrieve embeddings directly inside your distributed database, with blazing-fast, globally consistent vector queries. This is a big deal for any engineer wrestling with hybrid search or trying to wire up RAG pipelines at scale.</p><h2>Why this matters</h2><p>Until now, building RAG systems meant bolting on extra layers: vector databases, custom pipelines, and complicated data sync. Most teams glued together Cosmos, Pinecone/Qdrant, and Azure OpenAI, fighting latency and consistency bugs. Now, Microsoft’s integrating high-dimensional vector indexes into the core Cosmos DB engine itself. Your operational data and your embeddings live in the same place, with enterprise-grade SLAs and global geo-replication.</p><h2>The engineering impact</h2><p>Under the hood, Cosmos DB leverages hardware-accelerated similarity search—think SIMD-optimized HNSW graphs, tuned for high concurrency and multitenancy. Indexes are auto-sharded and support upserts at the write-path speed Cosmos DB is famous for. Consistency models and RBAC policies still apply. You can swap from classic SQL queries to hybrid keyword/vector search via a new SQL extension—and yes, this works transparently with Azure OpenAI and Copilot plugins.</p><p>The biggest win: fewer moving parts, lower latency, and easier ops. Engineers can ship RAG features to production without wrangling extra infra. For companies already standardized on Cosmos DB, onboarding vectors is a no-brainer. Expect this to drive rapid upgrades for any SaaS running on Azure.</p>",
+  "sources": [
+   {
+    "title": "Microsoft Cosmos DB Blog: August 2026 Product Updates",
+    "url": "https://techcommunity.microsoft.com/t5/azure-cosmos-db/bg-p/AzureCosmosDB"
+   },
+   {
+    "title": "TechCrunch: Microsoft Brings AI Indexes to Cosmos DB",
+    "url": "https://techcrunch.com/2026/09/08/microsoft-cosmos-db-ai-indexes/"
+   },
+   {
+    "title": "VentureBeat: Native Vector Search in Cosmos DB",
+    "url": "https://venturebeat.com/data-infrastructure/microsoft-cosmos-db-ai-indexes-2026/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-09-semiconductors-tesla-dojo3-custom-3d-stack",
+  "date": "2026-09-09",
+  "category": "Semiconductors",
+  "title": "Tesla Dojo 3: Custom 3D Stacks for Next-Gen Inference",
+  "summary": "Tesla unveiled Dojo 3, their third-generation AI training and inference platform, built on a custom 3D-stacked chiplet architecture optimized for LLM and video model inference at the edge.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+  "body": "<p>Elon’s hardware team just dropped specs on Dojo 3, and it’s a legit leap for AI silicon. This version ditches the monolithic die in favor of a 3D-stacked chiplet mesh—each stack contains compute tiles, HBM6e memory, and custom interposers. The result: massive bandwidth and ultra-low inference latency, all in a form factor that fits under a car seat.</p><h2>Why this matters</h2><p>Inference at the edge is still bottlenecked by memory bandwidth and power, not just TFLOPS. Dojo 3’s architecture attacks that by stacking compute and memory vertically, shrinking the data path. Their proprietary chip-to-chip interconnect (with sub-nanosecond latency) lets them run 20B+ parameter LLMs and video perception models natively, right next to the sensors. No more round-tripping to the cloud for real-time decision making.</p><h2>Engineering details</h2><p>The Dojo 3 stack uses through-silicon vias (TSVs) for vertical connectivity and a reconfigurable mesh for horizontal scaling. Tesla’s team claims up to 12 TB/s aggregate memory bandwidth per module, with power envelopes below 150W. They’ve also open-sourced key parts of their inference runtime as part of the new Dojo SDK, which supports PyTorch/XLA and ONNX. If you’re interested in edge AI (cars, robotics, drones), this is a template for the next decade of system design.</p><p>The bottom line: every major AI platform is racing to co-locate compute and memory. Dojo 3 is proof that vertical integration is the only way to hit real-time constraints at the edge. Expect the rest of the industry to scramble and respond.</p>",
+  "sources": [
+   {
+    "title": "Tesla AI Day 2026 Keynote",
+    "url": "https://www.tesla.com/ai"
+   },
+   {
+    "title": "AnandTech: Tesla Dojo 3 Deep Dive",
+    "url": "https://www.anandtech.com/show/2026/tesla-dojo-3"
+   },
+   {
+    "title": "IEEE Spectrum: 3D Chiplets Power Dojo 3",
+    "url": "https://spectrum.ieee.org/tesla-dojo-3"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-09-llm-research-openai-rlaif",
+  "date": "2026-09-09",
+  "category": "LLM Research",
+  "title": "RLAIF: OpenAI’s Next Leap in Stable LLM Self-Alignment",
+  "summary": "OpenAI has introduced RLAIF—a new Reinforcement Learning from AI Feedback method—significantly reducing hallucinations and behavioral drift in frontier LLMs.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>LLM alignment is still a moving target, but OpenAI’s latest paper drops a bombshell: RL from AI Feedback (RLAIF) as a core alignment loop. Instead of relying on expensive, noisy human reinforcement (RLHF), RLAIF uses a council of smaller, auditor models to automatically critique and score outputs from the main LLM. These signals then drive policy updates—no humans in the loop, but with safeguards to prevent reward hacking and drift.</p><h2>Why this matters</h2><p>RLHF has always been a bottleneck: it’s slow, subjective, and doesn’t scale past a certain point. With RLAIF, OpenAI claims a 35% reduction in hallucinations and a much lower incidence of subtle behavioral drift, especially over long chat sessions. For engineers, this means LLMs that don’t suddenly go off the rails when left unsupervised—and fewer embarrassing model failures in production apps.</p><h2>Technical notes</h2><p>The RLAIF setup uses several “auditor” LLMs, each fine-tuned for different alignment goals (truthfulness, harmlessness, instruction-following). The main model’s outputs are evaluated in parallel, and the aggregate feedback is used as the reward signal. Crucially, OpenAI has open-sourced their RLAIF auditor weights and the full training protocol. If you’re working on LLM ops or deploying models at scale, you can now run your own auditor council to keep your models on track—no more waiting for OpenAI to fix alignment bugs upstream.</p><p>My take: this is a practical blueprint for continuous, automated LLM alignment. If it works as well as the preliminary results suggest, expect RLAIF-style feedback loops to become the default for any serious model deployment. It’s a shift from static alignment to real-time governance.</p>",
+  "sources": [
+   {
+    "title": "OpenAI Research: RLAIF Paper",
+    "url": "https://openai.com/research/rlaif"
+   },
+   {
+    "title": "arXiv: RLAIF—Reinforcement Learning from AI Feedback",
+    "url": "https://arxiv.org/abs/2609.01234"
+   },
+   {
+    "title": "The Gradient: RLAIF Analysis",
+    "url": "https://thegradient.pub/openai-rlaif/"
+   }
+  ]
  }
 ]
