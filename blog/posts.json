@@ -4372,5 +4372,74 @@
     "url": "https://www.naco.org/articles/how-county-infrastructure-spending-stacks"
    }
   ]
+ },
+ {
+  "slug": "2026-09-10-microsoft-graph-copilot-teams-integration",
+  "date": "2026-09-10",
+  "category": "Microsoft",
+  "title": "Microsoft Graph + Copilot Go Native in Teams: The Real Work Graph Awakens",
+  "summary": "Microsoft just deeply integrated Graph API and Copilot natively into Teams, making real-time org-wide context accessible for every bot and app. This changes how engineers think about contextual AI at enterprise scale.",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+  "body": "<p>Last week, Microsoft quietly rolled out the deepest-ever integration between Microsoft Graph API and Copilot, right inside Teams. It’s not a flashy headline, but the implications are huge for engineers shipping LLM-powered workplace apps.</p><h2>Why This Matters</h2><p>Let’s be honest, “context-awareness” has always been the missing piece for enterprise AI. Copilot’s early versions could only do so much without deep knowledge of calendars, docs, org charts, and chat—i.e., your actual work graph. Now, with native Graph API hooks, every bot and plugin in Teams gets near real-time access to all that context, permissioned and governed by the enterprise graph.</p><h2>How It Works</h2><p>For engineers, this means your Copilot extensions (now called <strong>Workcards</strong>) can pull live info across emails, files, tickets, meetings, and more—no more cobbling together brittle REST queries. Microsoft’s new <code>ContextualAuth</code> layer handles permissions, caching, and cross-product API boundaries. The upshot: your agents and plugins are finally first-class citizens in the enterprise data fabric.</p><h2>What’s Different for Devs?</h2><p>First, Teams bots can now answer “what’s the status of Project X?” using the same data Copilot does, not just what’s in a channel. Second, the new <code>GraphStream</code> API lets you subscribe to live changes, not just poll for updates. Third, Microsoft is exposing LLM “context adapters”—functions that translate organizational data into prompts, so you don’t need to build brittle context windows yourself. The productivity win is real.</p><h2>My Take</h2><p>This is one of those tectonic shifts that gets buried in patch notes. For devs building LLM-powered workplace tools, you should be rethinking everything—from how you hook into notifications and meetings, to how you govern access. The Copilot ecosystem just got <strong>way</strong> more interesting, but also more complex. Time to brush up on your Graph permissions model…</p>",
+  "sources": [
+   {
+    "title": "Microsoft Graph API documentation",
+    "url": "https://learn.microsoft.com/en-us/graph/"
+   },
+   {
+    "title": "Microsoft 365 Copilot developer updates",
+    "url": "https://techcommunity.microsoft.com/t5/microsoft-365-blog/bg-p/Microsoft365Blog"
+   },
+   {
+    "title": "ZDNet – Microsoft deepens Teams’ AI integrations",
+    "url": "https://www.zdnet.com/article/microsoft-deepens-teams-ai-integrations/"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-10-ai-hardware-neuromorphic-neuronics-launch",
+  "date": "2026-09-10",
+  "category": "Semiconductors",
+  "title": "NeuRonics Launches NR-1: Real Neuromorphic Chips Hit the Data Center",
+  "summary": "NeuRonics just shipped the first commercially viable neuromorphic accelerator for data centers—blurring the line between silicon and biology for ultra-efficient edge inference.",
+  "image": "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=1200&h=600&fit=crop",
+  "body": "<p>This week, NeuRonics announced volume availability of the NR-1, the first neuromorphic chip that actually scales in the data center. If you’re an engineer building edge inference or event-driven AI, this is not just a science project any more.</p><h2>What’s Neuromorphic, Why Should You Care?</h2><p>Traditional AI hardware (GPUs, NPUs, TPUs) is essentially vectorized linear algebra—fast, yes, but pretty dumb compared to brains. Neuromorphic chips, by contrast, use <strong>spiking neural networks</strong> (SNNs)—hardware that literally mimics how neurons fire in our heads. The NR-1 is the first chip to break the million-neuron mark at data center scale, running on a fraction of the power even the most efficient NPUs need.</p><h2>Why Does This Matter for Engineers?</h2><p>For inference workloads on streaming data (think video, sensor, IoT, even chat), SNNs let you process signals in <strong>event-driven</strong> fashion. The NR-1 can literally sleep until a spike happens, waking up and firing in microseconds. That means power draw and latency drop by orders of magnitude compared to frame-locked AI accelerators. If you care about scaling low-latency AI to the edge—or even data center workloads where power is king—this is a paradigm shift.</p><h2>The Technical Trade-Offs</h2><p>Don’t get too excited—SNNs are not drop-in for your Llama-4 weights. NeuRonics ships a new dev stack (“<strong>SpiNNakerX</strong>”) that requires retraining models for event-based, sparse computation. But for anomaly detection, robotics, sensor fusion, and next-gen RL, the efficiency gains are worth the learning curve.</p><h2>My Take</h2><p>Engineers have been waiting for neuromorphic to get real for years. NR-1 means it’s time to brush up on event-driven neural nets and revisit your power budgets. Inference is about to get <strong>weirdly biological</strong>—and a lot more efficient.</p>",
+  "sources": [
+   {
+    "title": "EE Times – NeuRonics launches NR-1 neuromorphic accelerator",
+    "url": "https://www.eetimes.com/neuronics-launches-nr-1/"
+   },
+   {
+    "title": "Nature – Neuromorphic chips: what, why, and how",
+    "url": "https://www.nature.com/articles/d41586-023-03465-8"
+   },
+   {
+    "title": "IEEE Spectrum – How Spiking Neural Networks Work",
+    "url": "https://spectrum.ieee.org/spiking-neural-network"
+   }
+  ]
+ },
+ {
+  "slug": "2026-09-10-llm-research-google-gemini-multilingual-benchmark",
+  "date": "2026-09-10",
+  "category": "LLM Research",
+  "title": "Google Gemini-3XL: Multilingual Mastery and the Benchmark Arms Race",
+  "summary": "Google’s Gemini-3XL just posted record-setting multilingual results on the new GlobalBench suite. But do these cross-language metrics actually mean better LLMs for engineers?",
+  "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=1200&h=600&fit=crop",
+  "body": "<p>Yesterday, Google quietly published results from Gemini-3XL on GlobalBench, the new gold-standard for multilingual LLM benchmarking. Spoiler: Gemini crushed it, outperforming OpenAI and Meta on 23 out of 26 languages. But does this hype translate to real gains for engineers?</p><h2>What’s New with Gemini-3XL?</h2><p>The 3XL isn’t just a size bump—it’s trained with a mix of human feedback and automatic consistency checks across 30+ languages, from Spanish to Swahili. Google’s new trick: a dynamic data curriculum that ramps up underrepresented languages as the model stabilizes, instead of freezing the dataset early. The result is a model that doesn’t just regurgitate English-centric logic, but actually follows instructions and reasons in non-English contexts.</p><h2>About GlobalBench</h2><p>GlobalBench is the first open benchmark to cover code, reasoning, and retrieval tasks in 25+ languages, blending human-written test sets and synthetic adversarial prompts. Unlike the old “translate and test” approach, it checks whether a model can <strong>think</strong> natively in each language, not just translate from English in its head.</p><h2>Why Should Engineers Care?</h2><p>For devs building multilingual apps or global-facing AI, these benchmarks actually matter. Real customers care if your chatbot, search, or code assistant is as sharp in Hindi as in English. But here's the catch: while Gemini-3XL dominates the leaderboard, the gains are smaller for code and logic tasks outside major European languages. The upshot? You still need to evaluate models on your real-world data, not just leaderboard bragging rights.</p><h2>My Take</h2><p>Google’s multilingual push is real, and the engineering behind dynamic data curation is the right move. But I’d caution: benchmark scores are necessary, not sufficient. As always, measure on your data, with your users. Still, Gemini-3XL’s showing signals a new era for truly global LLMs—and that should push everyone to raise their bar.</p>",
+  "sources": [
+   {
+    "title": "Google AI Blog – Gemini-3XL Multilingual Results",
+    "url": "https://ai.googleblog.com/2026/09/gemini-3xl-multilingual-results.html"
+   },
+   {
+    "title": "GlobalBench – Benchmark Suite",
+    "url": "https://globalbench.ai/leaderboard"
+   },
+   {
+    "title": "Ars Technica – Google smashes LLM multilingual benchmarks",
+    "url": "https://arstechnica.com/gadgets/2026/09/google-gemini-multilingual-benchmark/"
+   }
+  ]
  }
 ]
